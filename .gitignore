@@ -3,7 +3,6 @@ node_modules/
 npm-debug.log*
 
 # Build outputs
-frontend/dist/
 backend/dist/
 
 # Environment files
