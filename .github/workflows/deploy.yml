@@ -27,5 +27,6 @@ jobs:
 
       - name: Trigger SmarterASP Deploy Hook
         run: |
-          curl -X POST "https://github.site4now.net/github/deployhook?token=djF8MzcxNzkwOXwxNzg3NDA2NjAxfDAxTERXZXZZVWhCZHhYUEJOYWRhUGNWT29LY2lmNGU4SVZwMS1yOTR0YTg.cCCpAmXAuoZjINSyO352Jx5_iFh_oe01zV2PlGg2JJU"
+          curl -X POST "https://github.site4now.net/github/deployhook?token=djF8MzcxNzkwOXwxNzg3NDA4NjQzfDd6d2o2bE9TY2VPNFhXRnNTREV5UjNGUnQ1VDA3Z0ZIWmNmVXFsNVdPM00.le5zKlmYv48a0wbXdfssVMwKCOmQx1PrjuJqvddfys8"
+
 
