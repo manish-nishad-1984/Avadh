@@ -6,7 +6,6 @@ npm-debug.log*
 backend/dist/
 
 # Environment files
-.env
 backend/.env
 *.local
 
