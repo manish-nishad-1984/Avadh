@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-amber-50/20 text-slate-800 antialiased font-sans;
+  }
+
+  /* Public Heading Defaults */
+  .public-theme h1, .public-theme h2, .public-theme h3, .public-theme h4, .public-theme h5, .public-theme h6 {
+    @apply font-serif;
+  }
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #f5b814 0%, #d9960b 50%, #b37207 100%);
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #d9960b 0%, #b37207 50%, #75450e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.maroon-gradient {
+  background: linear-gradient(135deg, #8c1f21 0%, #751f21 50%, #400c0d 100%);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 150, 11, 0.2);
+}
+
+.card-hover-effect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(179, 114, 7, 0.25);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdf8ed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d9960b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b37207;
+}
