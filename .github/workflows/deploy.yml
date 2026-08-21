@@ -1,0 +1,30 @@
+name: Deploy to SmarterASP.net
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies & Build Frontend
+        run: |
+          cd frontend
+          npm install
+          npm run build
+
+      - name: Trigger SmarterASP Deploy Hook
+        run: |
+          curl -X POST "https://github.site4now.net/github/deployhook?token=djF8MzcxNzg4OXwxNzg3NDA2MDczfE1uTzlrVmVSazRfMDlTWGd0RnBRZUhjYy0zN1l4dF9xV2ZDdVRxeEcyelU.NW3CB1dmYkmZfN-FsNthcqHgitA9X2V0UtJRrRZrQXw"

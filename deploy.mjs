@@ -7,25 +7,34 @@ async function deploy() {
   client.ftp.verbose = true;
 
   try {
-    console.log('🚀 Connecting to FTP server WIN8194.site4now.net...');
+    console.log('🚀 Connecting to FTP server win8194.site4now.net...');
     await client.access({
-      host: 'WIN8194.site4now.net',
-      user: 'avadhftp',
-      password: 'avadh@123',
+      host: 'win8194.site4now.net',
+      port: 21,
+      user: 'jigneshsatani-001',
+      password: 'avadh@123', // NOTE: Replace with your actual SmarterASP.net password if different
       secure: false,
     });
 
     console.log('✅ FTP Connected successfully.');
-    console.log('📤 Uploading frontend production build to site4now hosting...');
+    console.log('📤 Uploading frontend production build to site4now hosting (jigneshsatani-001-subsite4)...');
 
     const distPath = path.join(process.cwd(), 'frontend', 'dist');
     if (!fs.existsSync(distPath)) {
-      console.error('❌ dist folder not found. Please run "npm run build" in frontend first.');
+      console.error('❌ dist folder not found. Please ensure "npm run build" in frontend is completed.');
       process.exit(1);
     }
 
+    // Navigate to remote site directory if applicable
+    try {
+      await client.cd('/AVADH');
+      console.log('📂 Navigated to /AVADH remote folder');
+    } catch (cdErr) {
+      console.log('ℹ️ /AVADH folder auto-created or uploading to default root directory.');
+    }
+
     await client.uploadFromDir(distPath);
-    console.log('🎉 Deployment to site4now completed successfully!');
+    console.log('🎉 Deployment to jigneshsatani-001-subsite4 completed successfully!');
   } catch (err) {
     console.error('❌ Deployment error:', err);
   } finally {
@@ -34,3 +43,4 @@ async function deploy() {
 }
 
 deploy();
+
