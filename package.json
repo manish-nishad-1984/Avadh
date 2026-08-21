@@ -1,5 +1,14 @@
 {
+  "name": "avadh-jewellery",
+  "version": "1.0.0",
+  "description": "AVADH Imitation Jewellery - Full Stack App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
-    "basic-ftp": "^6.2.0"
+    "basic-ftp": "^6.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0"
   }
 }
